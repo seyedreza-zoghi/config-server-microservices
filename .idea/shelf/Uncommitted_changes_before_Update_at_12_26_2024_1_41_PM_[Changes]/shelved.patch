@@ -1,0 +1,147 @@
+Index: config-repo/application-dev.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server:  \r\n  port:\r\n    9999\r\nspring:  \r\n  application:    \r\n    name: config-repo  \r\nmy:    \r\n  greeting: *helloworld from config server*\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/config-repo/application-dev.yml b/config-repo/application-dev.yml
+--- a/config-repo/application-dev.yml	(revision 1fcb812f486b3cbd8cbbc89b5faed06e2ca70985)
++++ b/config-repo/application-dev.yml	(date 1735207712137)
+@@ -5,4 +5,4 @@
+   application:    
+     name: config-repo  
+ my:    
+-  greeting: *helloworld from config server*
++  greeting: helloworld from ***** config server
+Index: config-server/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server.port=8888\r\nspring.application.name=config-server  \r\n\r\nspring.cloud.config.server.git.uri=https://github.com/sarat9/config-server-spring-boot\r\nspring.cloud.config.server.git.searchPaths=config-repo\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/config-server/src/main/resources/application.properties b/config-server/src/main/resources/application.properties
+--- a/config-server/src/main/resources/application.properties	(revision 1fcb812f486b3cbd8cbbc89b5faed06e2ca70985)
++++ b/config-server/src/main/resources/application.properties	(date 1735207599445)
+@@ -1,5 +1,5 @@
+ server.port=8888
+-spring.application.name=config-server  
++spring.application.name=config-server
+ 
+-spring.cloud.config.server.git.uri=https://github.com/sarat9/config-server-spring-boot
++spring.cloud.config.server.git.uri=https://github.com/seyedreza-zoghi/ConfigServer-Microservices
+ spring.cloud.config.server.git.searchPaths=config-repo
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/encodings.xml b/.idea/encodings.xml
+new file mode 100644
+--- /dev/null	(date 1735207402938)
++++ b/.idea/encodings.xml	(date 1735207402938)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding">
++    <file url="file://$PROJECT_DIR$/config-client/src/main/java" charset="UTF-8" />
++    <file url="file://$PROJECT_DIR$/config-server/src/main/java" charset="UTF-8" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	(date 1735207402931)
++++ b/.idea/compiler.xml	(date 1735207402931)
+@@ -0,0 +1,20 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <annotationProcessing>
++      <profile name="Maven default annotation processors profile" enabled="true">
++        <sourceOutputDir name="target/generated-sources/annotations" />
++        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
++        <outputRelativeToContentRoot value="true" />
++        <module name="config-server" />
++        <module name="config-client" />
++      </profile>
++    </annotationProcessing>
++  </component>
++  <component name="JavacSettings">
++    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
++      <module name="config-client" options="-parameters" />
++      <module name="config-server" options="-parameters" />
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"jpab\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 1fcb812f486b3cbd8cbbc89b5faed06e2ca70985)
++++ b/.idea/misc.xml	(date 1735207402927)
+@@ -1,6 +1,16 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="MavenProjectsManager">
++    <option name="originalFiles">
++      <list>
++        <option value="$PROJECT_DIR$/config-server/pom.xml" />
++        <option value="$PROJECT_DIR$/config-client/pom.xml" />
++      </list>
++    </option>
++    <option name="workspaceImportForciblyTurnedOn" value="true" />
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+   <component name="ProjectType">
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+new file mode 100644
+--- /dev/null	(date 1735207402944)
++++ b/.idea/jarRepositories.xml	(date 1735207402944)
+@@ -0,0 +1,25 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="RemoteRepositoriesConfiguration">
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Central Repository" />
++      <option name="url" value="https://repo.maven.apache.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="central" />
++      <option name="name" value="Maven Central repository" />
++      <option name="url" value="https://repo1.maven.org/maven2" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="jboss.community" />
++      <option name="name" value="JBoss Community repository" />
++      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
++    </remote-repository>
++    <remote-repository>
++      <option name="id" value="maven-arch" />
++      <option name="name" value="Public Maven Repository Group" />
++      <option name="url" value="http://192.168.48.12:7000/nexus/content/repositories/arman-maven-release/" />
++    </remote-repository>
++  </component>
++</project>
+\ No newline at end of file
